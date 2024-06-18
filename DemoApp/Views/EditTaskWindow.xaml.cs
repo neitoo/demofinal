@@ -134,8 +134,8 @@ namespace DemoApp.Views
             task.description = DescriptionText.Text;
             task.fioClient = FIOClientText.Text;
             task.phoneClient = PhoneText.Text;
-            if (this.isAdd)  task.status = (int)StatusBox.SelectedValue;
-            if (this.isAdd)  task.worker = (int)WorkerBox.SelectedValue;
+            if (!this.isAdd)  task.status = (int)StatusBox.SelectedValue;
+            if (!this.isAdd)  task.worker = (int)WorkerBox.SelectedValue;
             if ((int)StatusBox.SelectedValue == 4) task.dateEnd = DateTime.Now;
 
             if(this.isAdd) DataEntity.Instance.demo.Tasks.Add(task);
