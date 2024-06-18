@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16beebae00514af087820e9322c59fb3" Name="Diagram1">
+        <EntityTypeShape EntityType="demoModel.StatusesTasks" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="demoModel.Tasks" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="demoModel.TypesTecnhic" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="demoModel.Users" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="demoModel.UsersTypes" Width="1.5" PointX="0.75" PointY="2" />
+        <AssociationConnector Association="demoModel.FK_Tasks_StatusesTasks" />
+        <AssociationConnector Association="demoModel.FK_Tasks_TypesTecnhic" />
+        <AssociationConnector Association="demoModel.FK_Tasks_Users" />
+        <AssociationConnector Association="demoModel.FK_Users_UsersTypes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,11 @@
+# Visual Studio Code Editor files
+.vs/
+
+# ReSharper folder used with Visual Studio
+_ReSharper.*
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

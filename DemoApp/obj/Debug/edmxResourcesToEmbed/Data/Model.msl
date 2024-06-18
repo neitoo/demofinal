@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище demoModelContainer" CdmEntityContainer="demoEntities">
+    <EntitySetMapping Name="StatusesTasks">
+      <EntityTypeMapping TypeName="demoModel.StatusesTasks">
+        <MappingFragment StoreEntitySet="StatusesTasks">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="demoModel.Tasks">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="worker" ColumnName="worker" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="phoneClient" ColumnName="phoneClient" />
+          <ScalarProperty Name="fioClient" ColumnName="fioClient" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="modelTechnic" ColumnName="modelTechnic" />
+          <ScalarProperty Name="typeTechnic" ColumnName="typeTechnic" />
+          <ScalarProperty Name="dateEnd" ColumnName="dateEnd" />
+          <ScalarProperty Name="dateCreate" ColumnName="dateCreate" />
+          <ScalarProperty Name="idTask" ColumnName="idTask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesTecnhic">
+      <EntityTypeMapping TypeName="demoModel.TypesTecnhic">
+        <MappingFragment StoreEntitySet="TypesTecnhic">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="demoModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersTypes">
+      <EntityTypeMapping TypeName="demoModel.UsersTypes">
+        <MappingFragment StoreEntitySet="UsersTypes">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
