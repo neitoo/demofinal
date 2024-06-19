@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IronQrDetection</name>
+    </assembly>
+    <members>
+        <member name="T:IronQrDetection.EmbeddedResourceLoader">
+            <summary>
+            Provides functionality to load embedded resources from the assembly.
+            </summary>
+        </member>
+        <member name="F:IronQrDetection.EmbeddedResourceLoader._cache">
+            <summary>
+            Caches previously loaded resources.
+            </summary>
+        </member>
+        <member name="M:IronQrDetection.EmbeddedResourceLoader.LoadResource(System.String)">
+            <summary>
+            Loads an embedded resource as a <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="resourceName">The name of the embedded resource.</param>
+            <returns>A <see cref="T:System.IO.Stream"/> representing the embedded resource.</returns>
+            <exception cref="T:IronQrDetection.Exceptions.IronQRDetectionException">
+            Thrown when the specified resource cannot be found.
+            </exception>
+        </member>
+        <member name="T:IronQrDetection.Exceptions.IronQRDetectionException">
+            <summary>
+            A generic Exception raised by IronQr
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="T:IronQrDetection.Exceptions.IronQrRuntimesCopyException">
+            <summary>
+            A runtime file missing Exception raised by IronQr
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="T:IronQrDetection.QrDetect">
+            <summary>
+            Class responsible for detecting QR codes in images.
+            </summary>
+        </member>
+        <member name="F:IronQrDetection.QrDetect.CONFIDENCE_THRESHOLD">
+            <summary>
+            Minimum confidence level for detection to be considered valid.
+            </summary>
+        </member>
+        <member name="F:IronQrDetection.QrDetect.MODEL_NAME">
+            <summary>
+            Name of the ONNX model used for detection.
+            </summary>
+        </member>
+        <member name="M:IronQrDetection.QrDetect.#ctor">
+            <summary>
+            Initializes a new instance of the QrDetect class.
+            </summary>
+        </member>
+        <member name="M:IronQrDetection.QrDetect.DetectQrCode(System.String)">
+            <summary>
+            Detects QR code within the input image.
+            </summary>
+            <returns>Detection result of type <see cref="T:IronQrDetection.DetectionResult"/>.</returns>
+        </member>
+        <member name="M:IronQrDetection.QrDetect.DetectQrCode(IronSoftware.Drawing.AnyBitmap)">
+            <summary>
+            Detects QR code within the input image.
+            </summary>
+            <returns>Detection result of type <see cref="T:IronQrDetection.DetectionResult"/>.</returns>
+        </member>
+        <member name="T:IronQrDetection.DetectionResult">
+            <summary>
+            Holds the result of a QR code detection operation.
+            </summary>
+        </member>
+        <member name="P:IronQrDetection.DetectionResult.ProcessedImage">
+            <summary>
+            Gets the image after it has been processed for detection.
+            </summary>
+        </member>
+        <member name="P:IronQrDetection.DetectionResult.Detections">
+            <summary>
+            Gets the list of detected objects in the image.
+            </summary>
+        </member>
+        <member name="M:IronQrDetection.DetectionResult.#ctor(SixLabors.ImageSharp.Image{SixLabors.ImageSharp.PixelFormats.Rgba32},System.Collections.Generic.List{IronQrDetection.Detection})">
+            <summary>
+            Initializes a new instance of the <see cref="T:IronQrDetection.DetectionResult"/> struct.
+            </summary>
+            <param name="processedImage">The processed image.</param>
+            <param name="detections">The detections.</param>
+        </member>
+        <member name="T:IronQrDetection.Detection">
+            <summary>
+            Represents a single detection in an image.
+            </summary>
+        </member>
+        <member name="P:IronQrDetection.Detection.Confidence">
+            <summary>
+            Gets or sets the confidence level of the detection.
+            </summary>
+        </member>
+        <member name="P:IronQrDetection.Detection.Rectangle">
+            <summary>
+            Gets or sets the bounding rectangle for the detection.
+            </summary>
+        </member>
+        <member name="M:IronQrDetection.Detection.#ctor(System.Single,SixLabors.ImageSharp.RectangleF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IronQrDetection.Detection"/> struct.
+            </summary>
+            <param name="confidence">The confidence level of the detection.</param>
+            <param name="rectangle">The bounding rectangle for the detection.</param>
+        </member>
+    </members>
+</doc>

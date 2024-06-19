@@ -1,17 +1,10 @@
-﻿using DemoApp.Data;
+﻿using DemoApp.Classes;
+using DemoApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace DemoApp.Views
 {
@@ -21,26 +14,29 @@ namespace DemoApp.Views
     public partial class LoginWindow : Window
     {
         List<Users> users;
+        Auth auth;
         public LoginWindow()
         {
             try
             {
                 users = DataEntity.Instance.demo.Users.ToList();
+                auth = new Auth(users);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
                 this.Close();
             }
+
             
             InitializeComponent();
         }
 
         private void AuthButton_Click(object sender, RoutedEventArgs e)
         {
-            var user = users.Where(us => us.login == LoginBox.Text && us.password == PasswordBox.Password).FirstOrDefault();
-            if (user != null) { 
-                ManagerWindow managerWindow = new ManagerWindow(user);
+            bool isAuth = auth.SignIn(LoginBox.Text, PasswordBox.Password);
+            if (isAuth) { 
+                ManagerWindow managerWindow = new ManagerWindow(auth.user);
                 managerWindow.Show();
 
                 this.Close();

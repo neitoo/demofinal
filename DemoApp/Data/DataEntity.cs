@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DemoApp.Data
 {
-    internal class DataEntity
+    public class DataEntity
     {
        public demoEntities demo = new demoEntities();
        public static DataEntity Instance = new DataEntity();
